@@ -7,11 +7,15 @@ document.addEventListener('DOMContentLoaded', function () {
             var content = this.innerHTML;
 
             var signs = ["+", "-", "*", "/"]
+            var lastOperation;
 
             document.getElementById("entry").innerHTML = content;
             document.getElementById("operations").innerHTML += content;
 
             // var isDecimal = false;
+            if (!signs.indexOf(content)) {
+                lastOperation = content;
+            }
 
             if (content == "=") {
                 var result = eval(operations);
@@ -25,7 +29,11 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (content == "x") {
                 operations += "*";
             } else if (content == "CE") {
-                operations;
+                var NewOp = operations.slice(0, operations.indexOf(lastOperation));
+                operations = NewOp;
+                console.log(operations);
+                document.getElementById("entry").innerHTML = 0;
+                document.getElementById("operations").innerHTML = operations;
             } else {
                 operations += content;
             }

@@ -54,6 +54,26 @@ html, body, div {
     width: 26vw;
     height: 10vh;
     color: white;
+
+  }
+
+  #viewer #entry {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    width: 24vw;
+    height: 5vh;
+    font-size: 26px;
+    padding-top: 1vh; 
+  }
+
+  #viewer #operations {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    width: 24vw;
+    height: 5vh;
+    font-size: 18px;
   }
 
   #buttons {
@@ -111,5 +131,11 @@ html, body, div {
   border-radius: 10px;
   outline: none;
   color: white;
-  font-size: 18px;
+  font-size: 22px;
+  -webkit-transition-duration: 0.4s;
+  transition: white 0.4s ease;
+ }
+
+ button:hover {
+   background-color: rgba(255, 255, 255, 0.2);
  }
