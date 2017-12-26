@@ -3,6 +3,10 @@ html, body, div {
   margin: 0;
 }
 
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
   .container {
     display: grid;
     justify-content: center;
@@ -49,6 +53,7 @@ html, body, div {
     border: 1px solid white;
     width: 26vw;
     height: 10vh;
+    color: white;
   }
 
   #buttons {
