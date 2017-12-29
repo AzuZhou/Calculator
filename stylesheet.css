@@ -145,6 +145,7 @@ html, body, div {
   font-size: 2vw;
   -webkit-transition-duration: 0.4s;
   transition: white 0.4s ease;
+  cursor: pointer;
  }
 
  button:hover {
