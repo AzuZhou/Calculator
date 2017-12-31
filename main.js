@@ -18,9 +18,23 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (content == "=") {
-                var result = eval(operations);
-                document.getElementById("entry").innerHTML = result;
-                document.getElementById("operations").innerHTML += result;
+                try {
+                    eval(operations);
+                } catch (err) {
+                    document.getElementById("entry").innerHTML = "Syntax ERROR";
+                    document.getElementById("operations").innerHTML = "";
+                } finally {
+                    var result = eval(operations)
+                }
+                if (typeof (result) === "number") {
+                    if (result == "Infinity" || result == "NaN") {
+                        document.getElementById("entry").innerHTML = "Math ERROR";
+                        document.getElementById("operations").innerHTML = "";
+                    }
+                } else {
+                    document.getElementById("entry").innerHTML = result;
+                    document.getElementById("operations").innerHTML += result;
+                }
             } else if (content == "AC") {
                 operations = "";
                 content = "";
@@ -31,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (content == "CE") {
                 var NewOp = operations.slice(0, operations.indexOf(lastOperation));
                 operations = NewOp;
-                console.log(operations);
                 document.getElementById("entry").innerHTML = 0;
                 document.getElementById("operations").innerHTML = operations;
             } else {
