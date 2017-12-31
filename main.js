@@ -12,29 +12,32 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById("entry").innerHTML = content;
             document.getElementById("operations").innerHTML += content;
 
-            // var isDecimal = false;
             if (!signs.indexOf(content)) {
                 lastOperation = content;
             }
 
             if (content == "=") {
+
                 try {
                     eval(operations);
                 } catch (err) {
+                    console.log(result);
                     document.getElementById("entry").innerHTML = "Syntax ERROR";
                     document.getElementById("operations").innerHTML = "";
                 } finally {
-                    var result = eval(operations)
+                    var result = eval(operations);
                 }
-                if (typeof (result) === "number") {
+
+                if (typeof (result) == "number") {
                     if (result == "Infinity" || result == "NaN") {
                         document.getElementById("entry").innerHTML = "Math ERROR";
                         document.getElementById("operations").innerHTML = "";
+                    } else {
+                        document.getElementById("entry").innerHTML = result;
+                        document.getElementById("operations").innerHTML += result;
                     }
-                } else {
-                    document.getElementById("entry").innerHTML = result;
-                    document.getElementById("operations").innerHTML += result;
                 }
+
             } else if (content == "AC") {
                 operations = "";
                 content = "";
@@ -51,10 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 operations += content;
             }
 
-
-            // if (content == ".") {
-            //    isDecimal = false;
-            //}
         })
     })
 })
