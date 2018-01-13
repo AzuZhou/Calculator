@@ -1,9 +1,6 @@
-html, body, div {
+* {
   padding: 0;
   margin: 0;
-}
-
-* {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -33,7 +30,7 @@ html, body, div {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
   }
@@ -41,36 +38,37 @@ html, body, div {
   #buttons ul li {
     display: flex;
     justify-content: space-around;
-    align-items: center;
     width: 100%;
   }
   
   #viewer {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
     border: 1px solid white;
     width: 26vw;
     height: 10vh;
     color: white;
+    padding-top: 2px; 
   }
 
-  #viewer #entry {
+  #entry, #operations {
     display: flex;
     justify-content: flex-end;
     margin: 0;
     width: 24vw;
-    height: 5vh;
     font-size: 3vw;
+    overflow: hidden;
   }
 
-  #viewer #operations {
-    display: flex;
-    justify-content: flex-end;
-    margin: 0;
-    width: 24vw;
-    height: 5vh;
+  #entry {
+    height: 6vh;
+  }
+
+
+  #operations {
+    height: 3vh;
     font-size: 1.5vw;
   }
 
@@ -100,11 +98,6 @@ html, body, div {
   }
 
 #square {
-  width: 5vw;
-  height: 6vh;
-}
-
-#hidden {
   width: 5vw;
   height: 6vh;
 }
@@ -151,3 +144,154 @@ html, body, div {
  button:hover {
    background-color: rgba(255, 255, 255, 0.2);
  }
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 15% 70% 15%;
+  }
+
+  #viewer {
+    width: 40vw;
+    height: 12vh;
+  }
+  
+  #entry, #operations {
+    width: 38vw;
+  }
+
+  #entry {
+    font-size: 5vw;
+  }
+
+  #operations {
+    font-size: 2.5vw;
+  }
+
+  #buttons {
+    width: 40vw;
+    height: 45vh;
+    align-items: stretch;
+  }
+
+  button {
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 3.5vw;
+   }
+
+  #square {
+    width: 7vw;
+    height: 7vh;
+  }
+
+  #equal {
+    width: 7vw;
+    height: 16vh;
+    margin-bottom: 9vh;
+ }
+ 
+ #zero {
+   height: 7vh;
+   width: 17vw;
+ }
+ 
+ #row #last-li {
+   width: 92%;
+   height: 7vh;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ 
+  #row #point {
+   margin-left: 1.5vw;
+   margin-right: 1.5vw;
+   width: 7vw;
+   height: 7vh;
+  }
+
+  button:hover {
+    background-color: transparent;
+  }
+
+  #row, #row-123 {
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .container {
+    grid-template-columns: 0% 100% 0%;
+    grid-template-rows: 0% 100% 0%;
+  }
+
+  #calculator {
+    border: none;
+  }
+
+  #viewer {
+    width: 90vw;
+    height: 20vh;
+    border: none;
+  }
+  
+  #entry, #operations {
+    width: 88vw;
+  }
+
+  #entry {
+    padding-top: 3vh;
+    height: 14vh;
+    font-size: 16vw;
+  }
+
+  #operations {
+    height: 7vh;
+    font-size: 8vw;
+  }
+
+  #buttons {
+    width: 90vw;
+    height: 80vh;
+  }
+
+  button {
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 8vw;
+   }
+
+  #square {
+    width: 18vw;
+    height: 12vh;
+  }
+
+  #equal {
+    width: 18vw;
+    height: 26vh;
+    margin-bottom: 14vh;
+ }
+ 
+ #zero {
+   height: 12vh;
+   width: 40vw;
+ }
+ 
+ #row #last-li {
+   width: 95%;
+   height: 7vh;
+   display: flex;
+   align-items: center;
+ }
+ 
+  #row #point {
+   width: 18vw;
+   height: 12vh;
+  }
+
+  #row, #row-123 {
+    margin-top: 7vh;
+  }
+}
